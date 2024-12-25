@@ -1,0 +1,6 @@
+spring:
+    application:
+        name: mars
+    data:
+        mongodb:
+            uri: mongodb://shin:1234@localhost:27017/mars
