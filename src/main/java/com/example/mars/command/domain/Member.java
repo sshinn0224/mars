@@ -14,6 +14,7 @@ public class Member {
     private String id;
     private String name;
     private Integer age;
+    private String address;
 
     public Member(String name, Integer age) {
         this.name = name;
@@ -23,5 +24,9 @@ public class Member {
     public void modify(String name, Integer age) {
         this.name = name;
         this.age = age;
+    }
+
+    public void updateAddress(String address) {
+        this.address = address;
     }
 }

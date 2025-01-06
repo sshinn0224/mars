@@ -16,11 +16,19 @@ public class MemberCommandService {
         repository.save(member);
     }
 
-    public void update(String uid, String name, Integer age) {
-        Member member = repository.findById(uid)
+    public void modify(String id, String name, Integer age) {
+        Member member = repository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("찾을 수 없습니다."));
 
         member.modify(name, age);
+        repository.save(member);
+    }
+
+    public void updateAddress(String id, String address) {
+        Member member = repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("찾을 수 없습니다."));
+
+        member.updateAddress(address);
         repository.save(member);
     }
 }
