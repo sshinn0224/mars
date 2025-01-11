@@ -4,8 +4,8 @@ services:
   mongo:
     image: mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: mars
-      MONGO_INITDB_ROOT_PASSWORD: 1111
+      MONGO_INITDB_ROOT_USERNAME: shin
+      MONGO_INITDB_ROOT_PASSWORD: 1234
     ports:
       - "27017:27017"
     volumes:
@@ -24,6 +24,21 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+
+  mars-api:
+    image: mars-api
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_MONGODB_URI: mongodb://shin:1234@mongo:27017
+    ports:
+      - "8081:8080"
+    depends_on:
+      - mysql
+      - mongo
+    networks:
+      - default
 
 volumes:
   mongo-data:
