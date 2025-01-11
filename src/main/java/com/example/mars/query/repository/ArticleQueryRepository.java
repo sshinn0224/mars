@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface ArticleQueryRepository extends MongoRepository<Article, String> {
 
 
-    @Query(value = "{ '_id': ?0 }", fields = "{ 'subject': 1, 'content': 1 }")
+    @Query(value = "{ '_id': ?0 }", fields = "{ 'subject': 1, 'content': 1, 'author': 1 }")
     ArticleView findOneArticle(String id);
 }

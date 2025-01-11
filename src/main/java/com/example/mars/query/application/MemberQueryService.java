@@ -18,14 +18,14 @@ public class MemberQueryService {
         Member member = repository.findById(uid)
                 .orElseThrow(() -> new IllegalArgumentException("찾을 수 없습니다."));
 
-        return new MemberView(member.getId(), member.getName(), member.getAge());
+        return new MemberView(member.getId(), member.getName());
     }
 
     public List<MemberView> findAll() {
         List<Member> members = repository.findAll();
 
         return members.stream()
-                .map(member -> new MemberView(member.getId(), member.getName(), member.getAge()))
+                .map(member -> new MemberView(member.getId(), member.getName()))
                 .toList();
     }
 }

@@ -8,5 +8,4 @@ import lombok.Getter;
 public class MemberView {
     private String id;
     private String name;
-    private Integer age;
 }

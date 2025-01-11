@@ -20,7 +20,7 @@ public class ArticleCommand {
 
     @PostMapping
     public ResponseEntity<String> write(@RequestBody ArticleRequest request) {
-        ArticleDto dto = new ArticleDto(request.subject(), request.content());
+        ArticleDto dto = new ArticleDto(request.memberId(), request.subject(), request.content());
 
         service.write(dto);
 

@@ -15,12 +15,14 @@ public class Article {
     private String id;
     private String subject;
     private String content;
+    private Member author;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Article(String subject, String content) {
+    public Article(String subject, String content, Member author) {
         this.subject = subject;
         this.content = content;
+        this.author = author;
         this.createdAt = LocalDateTime.now();
     }
 
@@ -28,5 +30,11 @@ public class Article {
         this.subject = subject;
         this.content = content;
         this.updatedAt = LocalDateTime.now();
+    }
+
+    public void setAuthor(Member author) {
+        if(this.author == null) {
+            this.author = author;
+        }
     }
 }
