@@ -2,7 +2,6 @@ package com.example.mars.command.domain;
 
 import com.example.mars.shared.enums.RaceType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
