@@ -26,6 +26,9 @@ services:
       - mysql-data:/var/lib/mysql
 
   mars-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: mars-api
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb
