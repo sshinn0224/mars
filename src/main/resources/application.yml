@@ -1,6 +1,24 @@
 spring:
     application:
         name: mars
+    datasource:
+        url: jdbc:mysql://localhost:3306/mars
+        username: user
+        password: password
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: create
+            format-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+                use_sql_comments: true
+
+                dialect: org.hibernate.dialect.MySQL8Dialect
+
     data:
         mongodb:
             uri: mongodb://shin:1234@localhost:27017/mars
