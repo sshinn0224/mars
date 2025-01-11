@@ -1,9 +1,7 @@
 package com.example.mars.command.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.example.mars.shared.enums.RaceType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,8 +11,7 @@ import java.util.UUID;
 @Entity
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
-public class Book {
+public class Race {
 
     @Id
     @GeneratedValue
@@ -23,6 +20,11 @@ public class Book {
 
     private String name;
 
+    @Enumerated(EnumType.STRING)
+    private RaceType type;
 
-
+    public Race(String name, RaceType type) {
+        this.name = name;
+        this.type = type;
+    }
 }
